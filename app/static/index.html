@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocuMind - Document Q&A</title>
+  <style>
+    :root {
+      --bg: #0f172a; --panel: #1e293b; --accent: #6366f1; --accent2: #22d3ee;
+      --text: #e2e8f0; --muted: #94a3b8; --border: #334155; --ok: #34d399;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1e293b, var(--bg));
+      color: var(--text); min-height: 100vh;
+    }
+    header { padding: 32px 24px 8px; text-align: center; }
+    header h1 { margin: 0; font-size: 2rem; letter-spacing: -0.5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; background-clip: text; color: transparent; }
+    header p { color: var(--muted); margin: 6px 0 0; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 24px; }
+    .card { background: var(--panel); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px; margin-bottom: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.05rem; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; }
+    input[type=file], input[type=text] {
+      flex: 1; min-width: 200px; padding: 11px 12px; border-radius: 10px;
+      border: 1px solid var(--border); background: #0b1220; color: var(--text); }
+    button { padding: 11px 18px; border: 0; border-radius: 10px; cursor: pointer;
+      font-weight: 600; color: white; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    .muted { color: var(--muted); font-size: .9rem; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px;
+      background: #0b1220; border: 1px solid var(--border); color: var(--accent2); font-size: .8rem; }
+    .answer { white-space: pre-wrap; line-height: 1.6; }
+    .citation { border-left: 3px solid var(--accent); padding: 8px 12px; margin: 8px 0;
+      background: #0b1220; border-radius: 0 8px 8px 0; font-size: .88rem; }
+    .citation .src { color: var(--ok); font-weight: 600; }
+    .docs li { margin: 4px 0; }
+    footer { text-align: center; color: var(--muted); padding: 24px; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DocuMind</h1>
+    <p>Upload documents and ask questions - answers grounded in your files, with citations.</p>
+    <p id="provider" class="muted"></p>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <h2>1. Upload a document <span class="muted">(PDF, TXT, MD)</span></h2>
+      <div class="row">
+        <input type="file" id="file" accept=".pdf,.txt,.md" />
+        <button id="uploadBtn">Upload</button>
+      </div>
+      <p id="uploadStatus" class="muted"></p>
+      <ul class="docs muted" id="docList"></ul>
+    </div>
+
+    <div class="card">
+      <h2>2. Ask a question</h2>
+      <div class="row">
+        <input type="text" id="question" placeholder="e.g. What is this document about?" />
+        <button id="askBtn">Ask</button>
+      </div>
+      <div id="result" style="margin-top:16px; display:none;">
+        <div class="answer card" id="answer"></div>
+        <div id="citations"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Built with FastAPI | in-memory vector search | pluggable LLM (offline / OpenAI / Gemini)</footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  documind:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # All optional. Leave unset to run fully offline.
+      LLM_PROVIDER: ${LLM_PROVIDER:-auto}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    restart: unless-stopped

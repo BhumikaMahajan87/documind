@@ -1,0 +1,29 @@
+Acme Corp Employee Handbook
+
+Working Hours and Remote Work
+Acme Corp follows a hybrid working model. Employees are expected to be present
+in the office on Tuesday, Wednesday and Thursday, and may work remotely on
+Monday and Friday. Core collaboration hours are from 11:00 AM to 4:00 PM in the
+employee's local time zone.
+
+Leave Policy
+Every full-time employee is entitled to 24 days of paid annual leave per year.
+In addition, employees receive 12 days of sick leave. Annual leave must be
+requested at least two weeks in advance through the HR portal. Unused annual
+leave of up to 5 days can be carried over to the next calendar year.
+
+Refund and Reimbursement Policy
+Business expenses are reimbursed within 30 days of submitting a valid receipt.
+Travel, meals during business trips, and approved software subscriptions are
+all reimbursable. Reimbursement requests above 500 dollars require prior
+manager approval.
+
+Code of Conduct
+All employees must treat colleagues with respect and maintain confidentiality
+of customer data. Violations of the data protection policy may result in
+disciplinary action up to and including termination.
+
+Performance Reviews
+Performance reviews are conducted twice a year, in June and December. Reviews
+assess goal completion, collaboration, and technical impact. Promotions are
+decided during the December review cycle.
